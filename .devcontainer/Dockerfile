@@ -4,15 +4,19 @@ ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Asia/Tokyo
 
 # update the ubuntu os image and install mandatory libs.
-RUN apt update && apt-get upgrade -y && \
+# CAUTION: Don't upgrade packages, especially the CUDA and CuDNN.
+RUN apt update &&  \
     apt install -y \
-        sudo wget curl apt-utils locales bash-completion && \
+        sudo wget curl apt-utils locales bash-completion fonts-noto-cjk && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
 
 # install python library
 RUN /usr/local/bin/pip3 install --upgrade pip && \
-    /usr/local/bin/pip3 install autopep8 black yapf bandit flake8 mypy pycodestyle pydocstyle pylint
+    /usr/local/bin/pip3 install \
+    autopep8 black yapf bandit flake8 mypy pycodestyle pydocstyle pylint \
+    jupyterlab-language-pack-ja-JP pillow pandas bokeh matplotlib && \
+    /usr/local/bin/pip3 cache purge
 
 # create vscode user
 ARG USERNAME=vscode
