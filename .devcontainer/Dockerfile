@@ -15,7 +15,7 @@ RUN apt update &&  \
 RUN /usr/local/bin/pip3 install --upgrade pip && \
     /usr/local/bin/pip3 install \
     autopep8 black yapf bandit flake8 mypy pycodestyle pydocstyle pylint \
-    jupyterlab-language-pack-ja-JP pillow pandas bokeh matplotlib && \
+    jupyterlab-language-pack-ja-JP keras-tqdm pillow pandas bokeh matplotlib && \
     /usr/local/bin/pip3 cache purge
 
 # create vscode user
