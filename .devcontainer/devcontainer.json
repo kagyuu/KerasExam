@@ -22,7 +22,9 @@
 				"ms-python.python",
 				"ms-python.vscode-pylance",
 				"ms-azuretools.vscode-docker", // To avoid the vscode on the devcontaier recommends it.
-				"oderwat.indent-rainbow"
+				"oderwat.indent-rainbow",
+				"github.copilot",
+				"github.copilot-chat"
 			]
 		}
 	},
