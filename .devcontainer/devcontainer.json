@@ -37,7 +37,8 @@
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// 8888 : jupyter notebook
-	"forwardPorts": [8888],
+	// 6006 : TensorBoard
+	"forwardPorts": [6006, 8888],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "pip3 install --user -r requirements.txt",
