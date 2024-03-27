@@ -7,7 +7,7 @@ ENV TZ=Asia/Tokyo
 # CAUTION: Don't upgrade packages, especially the CUDA and CuDNN.
 RUN apt update &&  \
     apt install -y \
-        sudo wget curl apt-utils locales bash-completion fonts-noto-cjk && \
+        sudo wget curl apt-utils locales bash-completion fonts-noto-cjk graphviz && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -15,7 +15,7 @@ RUN apt update &&  \
 RUN /usr/local/bin/pip3 install --upgrade pip && \
     /usr/local/bin/pip3 install \
     autopep8 black yapf bandit flake8 mypy pycodestyle pydocstyle pylint \
-    jupyterlab-language-pack-ja-JP keras-tqdm pillow pandas bokeh matplotlib && \
+    jupyterlab-language-pack-ja-JP keras-tqdm pydot pillow pandas bokeh matplotlib && \
     /usr/local/bin/pip3 cache purge
 
 # create vscode user
